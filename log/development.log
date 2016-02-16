@@ -1,0 +1,583 @@
+  [1m[36m (8.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (9.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20160216000225)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160216000225"]]
+  [1m[35m (12.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 83.141.77.130 at 2016-02-16 00:05:07 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/railties-4.2.2/lib/rails/templates/rails/welcome/index.html.erb (19.1ms)
+Completed 200 OK in 52ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 83.141.77.130 at 2016-02-16 00:05:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/railties-4.2.2/lib/rails/templates/rails/welcome/index.html.erb (20.3ms)
+Completed 200 OK in 60ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 83.141.77.130 at 2016-02-16 00:06:07 +0000
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 1194ms (Views: 1191.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/scaffolds.self-4cddaedbf50798da0e71083f0a70389982ef2881f80ea4d0046fd7ec9a64731f.css?body=1" for 83.141.77.130 at 2016-02-16 00:06:08 +0000
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 83.141.77.130 at 2016-02-16 00:06:08 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 83.141.77.130 at 2016-02-16 00:06:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBlogs (20160216001004)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "blogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160216001004"]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 83.141.77.130 at 2016-02-16 00:13:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/railties-4.2.2/lib/rails/templates/rails/welcome/index.html.erb (10.1ms)
+Completed 200 OK in 55ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 83.141.77.130 at 2016-02-16 00:13:52 +0000
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 841ms (Views: 668.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/blogs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 83.141.77.130 at 2016-02-16 00:13:53 +0000
+
+
+Started GET "/assets/blogs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 83.141.77.130 at 2016-02-16 00:13:53 +0000
+
+
+Started GET "/users/new" for 83.141.77.130 at 2016-02-16 00:13:55 +0000
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (69.7ms)
+  Rendered users/new.html.erb within layouts/application (88.6ms)
+Completed 200 OK in 158ms (Views: 146.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 83.141.77.130 at 2016-02-16 00:14:12 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EiLlAPYk+BdBpLRXVtWkD4aXEjYfM7umG/+KxB8Gv9mb6u9aVZ8STakCZlIIYFEwZjAbmAPBw81+xeEO8CY2gA==", "user"=>{"name"=>"Nilou", "email"=>"Nilou@abc.com"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Nilou"], ["email", "Nilou@abc.com"], ["created_at", "2016-02-16 00:14:12.670539"], ["updated_at", "2016-02-16 00:14:12.670539"]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+Redirected to https://webframeworks-15-02-nilou.c9users.io/users/1
+Completed 302 Found in 27ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/users/1" for 83.141.77.130 at 2016-02-16 00:14:12 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 74ms (Views: 52.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1/edit" for 83.141.77.130 at 2016-02-16 00:14:18 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/_form.html.erb (3.1ms)
+  Rendered users/edit.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/1" for 83.141.77.130 at 2016-02-16 00:14:25 +0000
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zVzzP39sASUpchy1TwV6i5dDsu6/VTUon1JP6g1XwydElPll3Nfrf8HUzrARsI+0d+S7QKOnTUP6aCQg4ndKfg==", "user"=>{"name"=>"", "email"=>""}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "name" = ?, "email" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["name", ""], ["email", ""], ["updated_at", "2016-02-16 00:14:25.087134"], ["id", 1]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://webframeworks-15-02-nilou.c9users.io/users/1
+Completed 302 Found in 13ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/users/1" for 83.141.77.130 at 2016-02-16 00:14:25 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 78ms (Views: 76.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 83.141.77.130 at 2016-02-16 00:14:27 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 65ms (Views: 63.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/1" for 83.141.77.130 at 2016-02-16 00:14:32 +0000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"J590PJ/fOk9chmpF63tcursjkgH10181auhlg/mIvMeuV35mPGTQFbQguEC1zqmFW4Sbr+khJ14P0g5JFqg1ng==", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://webframeworks-15-02-nilou.c9users.io/users
+Completed 302 Found in 19ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/users" for 83.141.77.130 at 2016-02-16 00:14:32 +0000
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 56ms (Views: 55.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 83.141.77.130 at 2016-02-16 00:15:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/railties-4.2.2/lib/rails/templates/rails/welcome/index.html.erb (7.9ms)
+Completed 200 OK in 51ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:15:17 +0000
+Processing by BlogsController#index as HTML
+  [1m[35mBlog Load (0.2ms)[0m  SELECT "blogs".* FROM "blogs"
+  Rendered blogs/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 223ms (Views: 218.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for 83.141.77.130 at 2016-02-16 00:15:19 +0000
+Processing by BlogsController#new as HTML
+  Rendered blogs/_form.html.erb (63.4ms)
+  Rendered blogs/new.html.erb within layouts/application (119.3ms)
+Completed 200 OK in 175ms (Views: 168.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/blogs" for 83.141.77.130 at 2016-02-16 00:15:45 +0000
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vz/dQlTZaKWA7BwuTWdPZK2RiLUl1oN+fCrmgOqKb8je99cY92KC/2hKzisT0rpbTTaBGzkk+xUZEI1KBarmkQ==", "blog"=>{"content"=>"Say no more", "user_id"=>"1"}, "commit"=>"Create Blog"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "blogs" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Say no more"], ["user_id", 1], ["created_at", "2016-02-16 00:15:45.216024"], ["updated_at", "2016-02-16 00:15:45.216024"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+Redirected to https://webframeworks-15-02-nilou.c9users.io/blogs/1
+Completed 302 Found in 19ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/blogs/1" for 83.141.77.130 at 2016-02-16 00:15:45 +0000
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBlog Load (0.4ms)[0m  SELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered blogs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 74ms (Views: 55.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:16:03 +0000
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 69ms (Views: 67.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for 83.141.77.130 at 2016-02-16 00:16:06 +0000
+Processing by BlogsController#new as HTML
+  Rendered blogs/_form.html.erb (2.7ms)
+  Rendered blogs/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 62ms (Views: 60.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs" for 83.141.77.130 at 2016-02-16 00:16:15 +0000
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YKiAQg9T1G0pr3sbaqGOy2rY1+/QxOuPAuqia+XsVZTpYIoYrOg+N8EJqR40FHv0in/eQcw2k+Rn0MmhCszczQ==", "blog"=>{"content"=>"abc", "user_id"=>"2"}, "commit"=>"Create Blog"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered blogs/_form.html.erb (19.6ms)
+  Rendered blogs/new.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 93ms (Views: 85.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:16:20 +0000
+Processing by BlogsController#index as HTML
+  [1m[35mBlog Load (0.2ms)[0m  SELECT "blogs".* FROM "blogs"
+  Rendered blogs/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 41ms (Views: 39.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/1" for 83.141.77.130 at 2016-02-16 00:16:24 +0000
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.2ms)[0m  [1mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered blogs/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 41ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:16:26 +0000
+Processing by BlogsController#index as HTML
+  [1m[35mBlog Load (0.2ms)[0m  SELECT "blogs".* FROM "blogs"
+  Rendered blogs/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/" for 83.141.77.130 at 2016-02-16 00:19:29 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/railties-4.2.2/lib/rails/templates/rails/welcome/index.html.erb (3.9ms)
+Completed 200 OK in 47ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:19:35 +0000
+Processing by BlogsController#index as HTML
+  [1m[35mBlog Load (0.2ms)[0m  SELECT "blogs".* FROM "blogs"
+  Rendered blogs/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 260ms (Views: 246.5ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/blogs/1" for 83.141.77.130 at 2016-02-16 00:19:46 +0000
+Processing by BlogsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dZ9052PZsMco+rmXkaoAfX/iv+F5NZzg4Lp0iwhbi9T8V369wGJancBca5LPH/VCn0W2T2XH5IuFgB9B53sCjQ==", "id"=>"1"}
+  [1m[36mBlog Load (0.4ms)[0m  [1mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "blogs" WHERE "blogs"."id" = ?[0m  [["id", 1]]
+  [1m[35m (13.5ms)[0m  commit transaction
+Redirected to https://webframeworks-15-02-nilou.c9users.io/blogs
+Completed 302 Found in 31ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:19:46 +0000
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for 83.141.77.130 at 2016-02-16 00:19:49 +0000
+Processing by BlogsController#new as HTML
+  Rendered blogs/_form.html.erb (39.4ms)
+  Rendered blogs/new.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 104ms (Views: 103.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs" for 83.141.77.130 at 2016-02-16 00:20:00 +0000
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"us8osSzEz53sQSb7ynTlhmN2Sc5Q27fMCkBg8K0MJpIzByLrj38lxwTn9P6UwRC5g9FAYEwpz6dvegs6Qiyvyw==", "blog"=>{"content"=>"Hey !", "user_id"=>"1"}, "commit"=>"Create Blog"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered blogs/_form.html.erb (4.4ms)
+  Rendered blogs/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 63ms (Views: 58.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:20:14 +0000
+Processing by BlogsController#index as HTML
+  [1m[35mBlog Load (0.2ms)[0m  SELECT "blogs".* FROM "blogs"
+  Rendered blogs/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 51ms (Views: 49.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 83.141.77.130 at 2016-02-16 00:21:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/railties-4.2.2/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 30ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:21:26 +0000
+Processing by BlogsController#index as HTML
+  [1m[35mBlog Load (0.3ms)[0m  SELECT "blogs".* FROM "blogs"
+  Rendered blogs/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 203ms (Views: 185.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs/new" for 83.141.77.130 at 2016-02-16 00:21:27 +0000
+Processing by BlogsController#new as HTML
+  Rendered blogs/_form.html.erb (54.1ms)
+  Rendered blogs/new.html.erb within layouts/application (103.6ms)
+Completed 200 OK in 155ms (Views: 149.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/blogs" for 83.141.77.130 at 2016-02-16 00:21:35 +0000
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kZ1nrLCTNdS8YS2wxQbiuZfw2ORt22lZPsSYhTGfzV0YVW32EyjfjlTH/7WbsxeGd1fRSnEpETJb/vNP3r9EBA==", "blog"=>{"content"=>"Hey !", "user_id"=>"1"}, "commit"=>"Create Blog"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "blogs" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Hey !"], ["user_id", 1], ["created_at", "2016-02-16 00:21:35.103088"], ["updated_at", "2016-02-16 00:21:35.103088"]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+Redirected to https://webframeworks-15-02-nilou.c9users.io/blogs/2
+Completed 302 Found in 17ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/blogs/2" for 83.141.77.130 at 2016-02-16 00:21:35 +0000
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mBlog Load (0.4ms)[0m  SELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered blogs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 86ms (Views: 70.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:21:37 +0000
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 74ms (Views: 72.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for 83.141.77.130 at 2016-02-16 00:21:39 +0000
+Processing by BlogsController#new as HTML
+  Rendered blogs/_form.html.erb (2.6ms)
+  Rendered blogs/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 72ms (Views: 70.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs" for 83.141.77.130 at 2016-02-16 00:21:48 +0000
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IMP1LPDleUTT8XxWL8Zzymyjs0YMM+DZDiEe6GTsPSypC/92U16THjtXrlNxc4b1jAS66BDBmLJrG3Uii8y0dQ==", "blog"=>{"content"=>"Hey", "user_id"=>"2"}, "commit"=>"Create Blog"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "blogs" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Hey"], ["user_id", 2], ["created_at", "2016-02-16 00:21:48.910586"], ["updated_at", "2016-02-16 00:21:48.910586"]]
+  [1m[35m (11.6ms)[0m  commit transaction
+Redirected to https://webframeworks-15-02-nilou.c9users.io/blogs/3
+Completed 302 Found in 16ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/blogs/3" for 83.141.77.130 at 2016-02-16 00:21:48 +0000
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlog Load (0.2ms)[0m  [1mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered blogs/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:21:52 +0000
+Processing by BlogsController#index as HTML
+  [1m[35mBlog Load (0.2ms)[0m  SELECT "blogs".* FROM "blogs"
+  Rendered blogs/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/new" for 83.141.77.130 at 2016-02-16 00:21:54 +0000
+Processing by BlogsController#new as HTML
+  Rendered blogs/_form.html.erb (1.7ms)
+  Rendered blogs/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs" for 83.141.77.130 at 2016-02-16 00:22:02 +0000
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lp3M/tUdkA6fxwwsMna6sa+f9KDk7o0o/nn+Gv0Yff2nVcakdqZ6VHdh3ilsw0+OTzj9Dvgc9UObQ5XQEjj0pA==", "blog"=>{"content"=>"What you want ?", "user_id"=>"1"}, "commit"=>"Create Blog"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "blogs" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "What you want ?"], ["user_id", 1], ["created_at", "2016-02-16 00:22:02.316800"], ["updated_at", "2016-02-16 00:22:02.316800"]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://webframeworks-15-02-nilou.c9users.io/blogs/4
+Completed 302 Found in 12ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/blogs/4" for 83.141.77.130 at 2016-02-16 00:22:02 +0000
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mBlog Load (0.2ms)[0m  SELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered blogs/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:22:04 +0000
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.4ms)[0m  [1mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs/new" for 83.141.77.130 at 2016-02-16 00:22:06 +0000
+Processing by BlogsController#new as HTML
+  Rendered blogs/_form.html.erb (1.7ms)
+  Rendered blogs/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs" for 83.141.77.130 at 2016-02-16 00:22:17 +0000
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JAVzcasdGaYfzxpanmTFWWzL57xmNOOBHvJVhKcToWWtzXkrCKbz/PdpyF/A0TBmjGzuEnrGm+p7yD5OSDMoPA==", "blog"=>{"content"=>"See pineapple ?", "user_id"=>"2"}, "commit"=>"Create Blog"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "blogs" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "See pineapple ?"], ["user_id", 2], ["created_at", "2016-02-16 00:22:17.542234"], ["updated_at", "2016-02-16 00:22:17.542234"]]
+  [1m[35m (8.5ms)[0m  commit transaction
+Redirected to https://webframeworks-15-02-nilou.c9users.io/blogs/5
+Completed 302 Found in 12ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/blogs/5" for 83.141.77.130 at 2016-02-16 00:22:17 +0000
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBlog Load (0.2ms)[0m  [1mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered blogs/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 47ms (Views: 45.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:22:19 +0000
+Processing by BlogsController#index as HTML
+  [1m[35mBlog Load (0.2ms)[0m  SELECT "blogs".* FROM "blogs"
+  Rendered blogs/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/new" for 83.141.77.130 at 2016-02-16 00:22:25 +0000
+Processing by BlogsController#new as HTML
+  Rendered blogs/_form.html.erb (1.6ms)
+  Rendered blogs/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 33ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogs" for 83.141.77.130 at 2016-02-16 00:22:39 +0000
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X09fdUo4inkd44IRKirKJXs3Y8fmhExm+3s+9QF+mq7Wh1Uv6YNgI/VFUBR0nz8am5Bqafp2NA2eQVU/7l4T9w==", "blog"=>{"content"=>"Say no more.", "user_id"=>"1"}, "commit"=>"Create Blog"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "blogs" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "Say no more."], ["user_id", 1], ["created_at", "2016-02-16 00:22:39.186958"], ["updated_at", "2016-02-16 00:22:39.186958"]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://webframeworks-15-02-nilou.c9users.io/blogs/6
+Completed 302 Found in 12ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/blogs/6" for 83.141.77.130 at 2016-02-16 00:22:39 +0000
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mBlog Load (0.2ms)[0m  SELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered blogs/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:22:41 +0000
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 51ms (Views: 49.4ms | ActiveRecord: 0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+
+
+Started GET "/" for 83.141.77.130 at 2016-02-16 00:25:07 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/railties-4.2.2/lib/rails/templates/rails/welcome/index.html.erb (4.0ms)
+Completed 200 OK in 42ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 83.141.77.130 at 2016-02-16 00:25:12 +0000
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 227ms (Views: 215.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 83.141.77.130 at 2016-02-16 00:25:14 +0000
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (36.8ms)
+  Rendered users/new.html.erb within layouts/application (77.6ms)
+Completed 200 OK in 118ms (Views: 114.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 83.141.77.130 at 2016-02-16 00:25:41 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B46E+teZ47A7t9Wasj83g3gMPrFgQyjms2uR3V5mACuORo6gdCIJ6tMRB5/sisK8mKs3H3yxUI3WUfoXsUaJcg==", "user"=>{"name"=>"Customer", "email"=>"Customer@c.com"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Customer"], ["email", "Customer@c.com"], ["created_at", "2016-02-16 00:25:41.700301"], ["updated_at", "2016-02-16 00:25:41.700301"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://webframeworks-15-02-nilou.c9users.io/users/2
+Completed 302 Found in 20ms (ActiveRecord: 9.7ms)
+
+
+Started GET "/users/2" for 83.141.77.130 at 2016-02-16 00:25:41 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 64ms (Views: 46.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 83.141.77.130 at 2016-02-16 00:25:44 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 66ms (Views: 64.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 83.141.77.130 at 2016-02-16 00:25:45 +0000
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.1ms)
+  Rendered users/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 61ms (Views: 60.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 83.141.77.130 at 2016-02-16 00:26:01 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jymZAEVTZ+fdgMJctVtD1/4Mm3Jh3rEhybJPexNWsi8G4ZNa5uiNvTUmEFnr7rboHquS3H0syUqsiCSx/HY7dg==", "user"=>{"name"=>"Barber", "email"=>"Barber@b.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Barber"], ["email", "Barber@b.com"], ["created_at", "2016-02-16 00:26:01.480156"], ["updated_at", "2016-02-16 00:26:01.480156"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+Redirected to https://webframeworks-15-02-nilou.c9users.io/users/3
+Completed 302 Found in 14ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/users/3" for 83.141.77.130 at 2016-02-16 00:26:01 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 41ms (Views: 39.3ms | ActiveRecord: 0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 1
+  [1m[36mBlog Load (0.4ms)[0m  [1mSELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mBlog Load (0.2ms)[0m  SELECT "blogs".* FROM "blogs" WHERE "blogs"."user_id" = ?  [["user_id", 3]]
+
+
+Started GET "/" for 83.141.77.130 at 2016-02-16 00:30:02 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 350ms (Views: 317.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/2" for 83.141.77.130 at 2016-02-16 00:30:35 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 86ms (Views: 68.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 83.141.77.130 at 2016-02-16 00:30:37 +0000
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:30:46 +0000
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.2ms)[0m  [1mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 66ms (Views: 57.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 83.141.77.130 at 2016-02-16 00:31:45 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 291ms (Views: 259.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/blogs" for 83.141.77.130 at 2016-02-16 00:31:52 +0000
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.3ms)[0m  [1mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 80ms (Views: 43.3ms | ActiveRecord: 0.6ms)
